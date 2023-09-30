@@ -3,6 +3,8 @@ USER root
 RUN dnf -y install make gcc libtool
 USER 1001
 
+RUN wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshift-client-linux.tar.gz
+RUN tar -zxf openshift-client-linux.tar.gz
 RUN wget https://github.com/VirusTotal/yara/archive/refs/tags/v4.3.2.tar.gz
 RUN tar -zxf v4.3.2.tar.gz
 WORKDIR /opt/app-root/src/yara-4.3.2
